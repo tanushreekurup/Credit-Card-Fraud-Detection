@@ -20,7 +20,13 @@ Since the data for credit card fraud is not available in real form(due to confid
 - Procfile
     - Contains the type of app.
 - Requirements
-    - Libraries needed to run the app.
+    - Flask
+    - gunicorn
+    - pandas
+    - numpy
+    - matplotlib
+    - seaborn
+    - sklearn
 - Templates
     - Files required for rendering purpose
 - Static
