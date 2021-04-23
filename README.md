@@ -43,7 +43,3 @@ Testing data for a Valid transaction can be found in the ***"valid_values.csv"**
 
 ***************
 
-## Web App
-
-Our Credit Card Fraud Detection project is available at: 
-
