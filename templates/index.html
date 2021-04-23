@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Credit Card Fraud Detection Web App</title>
+    <!-- <link rel="stylesheet" type="text/css" href="../static/css/styles.css"> -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <!--<link
+      rel="stylesheet"
+      type="text/css"
+       href="{{ url_for('static', filename='styles.css') }}"
+    />-->
+
+      <style>
+      .typewriter h2 {
+          color: #97caef;
+          font-family: monospace;
+          overflow: hidden; /* Ensures the content is not revealed until the animation */
+          border-right: .15em solid #05386B; /* The typwriter cursor */
+          white-space: nowrap; /* Keeps the content on a single line */
+          margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+          letter-spacing: .15em; /* Adjust as needed */
+          animation: 
+            typing 4s steps(30, end),
+            blink-caret .5s step-end;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+          from { width: 0 }
+          to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+          from, to { border-color: transparent }
+          50% { border-color: orange }
+        }
+
+        :root {
+        --bg: #3C465C;
+        --primary: #78FFCD;
+        --solid: #fff;
+        --btn-w: 10em;
+        --dot-w: calc(var(--btn-w)*.2);
+        --tr-X: calc(var(--btn-w) - var(--dot-w));
+      }
+      * {box-sizing: border-box;}
+      *:before, *:after {box-sizing: border-box;}
+
+
+      .btn {
+        position: relative;
+        margin: 0 auto;
+        width: var(--btn-w);
+        color: var(--primary);
+        border: .15em solid var(--primary);
+        border-radius: 5em;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.3em;
+        line-height: 2em;
+        cursor: pointer;	
+      }
+      .dot {
+        content: '';
+        position: absolute;
+        top: 0;
+        width: var(--dot-w);
+        height: 100%;
+        border-radius: 100%;
+        transition: all 300ms ease;
+        display: none;
+      }
+      .dot:after {
+        content: '';
+        position: absolute;
+        left: calc(50% - .4em);
+        top: -.4em;
+        height: .8em;
+        width: .8em;
+        background: var(--primary);
+        border-radius: 1em;
+        border: .25em solid var(--solid);
+        box-shadow: 0 0 .7em var(--solid),
+              0 0 2em var(--primary);
+      }
+      .btn:hover .dot,
+      .btn:focus .dot {
+        animation: atom 5s infinite linear;
+        display: block;
+      }
+      @keyframes atom {
+        0% {transform: translateX(0) rotate(0);}
+        30%{transform: translateX(var(--tr-X)) rotate(0);}
+        50% {transform: translateX(var(--tr-X)) rotate(180deg);}
+        80% {transform: translateX(0) rotate(180deg);}
+        100% {transform: translateX(0) rotate(360deg);}
+      }
+
+      .btn-info{
+        background-color: transparent;
+            height: 50%;
+            width: 100%;
+            color: #79FFFE;
+            font-size: 1.5em;
+            box-shadow: 0 0px 0px rgba(0, 0, 0, 0);
+            border-radius: 50px;
+      }
+
+      
+      textarea{
+        background-color: #ebdbd4;
+        color: rgb(31, 81, 126);
+        height: 20%;
+        width: 50%;
+        border: 2px solid #EDF5E1;
+        border-radius: 10px;
+        font-size: xx-large;
+      }
+
+      </style>
+
+  </head>
+  <body style="background-image: url('/static/img/back3.png');background-repeat: no-repeat;background-size: cover;">
+
+    <center>    
+    <h1 style="padding-top:1%;color: #EDF5E1;font-size: xxx-large;"><B>CREDIT CARD FRAUD DETECTION API</B></h1>
+
+      <br>
+
+    <div class="typewriter">
+      <h2 style="font-size: xx-large;"><B>Enter the 30 feature values in the below cell(in order):</B></h2>
+    </div>
+
+    <br><br>
+
+    <div class="ml-container">
+      
+
+      <form action="{{ url_for('predict')}}" method="POST">
+        <!-- <input type="text" name="comment"/> -->
+        <div class="justify">
+          <textarea name="message" rows="8" cols="50"></textarea>
+        </div>
+        <br><br><br>
+
+        <div class="container">	
+          <div class="btn">
+              <span><input type="submit" class="btn-info" value="Predict"></span>
+              <div class="dot"></div>
+          </div>
+        </div>
+      
+      </form>
+    </div>
+
+  </center>
+  </body>
+</html>
